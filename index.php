@@ -10,31 +10,33 @@ Animale, Persona, Casa, Computer, Hotel, Film, Videogioco, Sport, Bicicletta, Ve
  * @copyright 2021 Erion
  */
 
-class Animali {
-    public $specie;
-    public $famiglia;
-    public $habitat;
-    public $colore;
+// class Animali {
+//     public $specie;
+//     public $famiglia;
+//     public $habitat;
+//     public $colore;
 
-    public function __construct(string $specie, string $famiglia, string $habitat, string $colore) {
-        $this->specie = $specie;
-        $this->famiglia = $famiglia;
-        $this->habitat = $habitat;
-        $this->colore = $colore;
-    }
+//     public function __construct(string $specie, string $famiglia, string $habitat, string $colore) {
+//         $this->specie = $specie;
+//         $this->famiglia = $famiglia;
+//         $this->habitat = $habitat;
+//         $this->colore = $colore;
+//     }
 
-    public function getSpecie(){
-        return $this->specie;
-    }
-}
+//     public function getSpecie(){
+//         return $this->specie;
+//     }
+// }
+// $gatto = new Animali()
+// $leone = new Animali('leone', 'felidi', 'savana', 'giallo chiaro');
+// $cane = new Animali('cane', 'canidi', 'casa', 'grigio chiaro');
+// $pantera = new Animali('pantera', 'felidi', 'foreste pluviali tropicali', 'nero scuro');
+// $lupo = new Animali('lupo', 'canide lupino', 'le foreste e la tundra del Artide', 'grigiastro');
 
-$leone = new Animali('leone', 'felidi', 'savana', 'giallo chiaro');
-$cane = new Animali('cane', 'canidi', 'casa', 'grigio chiaro');
-$pantera = new Animali('pantera', 'felidi', 'foreste pluviali tropicali', 'nero scuro');
-$lupo = new Animali('lupo', 'canide lupino', 'le foreste e la tundra del Artide', 'grigiastro');
-
-var_dump($leone, $cane, $pantera, $lupo);
-var_dump($leone->getSpecie());
+// $gatto->specie = 'gatto';
+// var_dump($gatto);
+// var_dump($leone, $cane, $pantera, $lupo);
+// var_dump($leone->getSpecie());
 /** Persona class
  * @author Erion erion@hotmail.it
  * @copyright 2021 Erion
@@ -66,5 +68,28 @@ class Persona{
 $andrea = new Persona('Andrea', 'Rossi', 25, '3298564570', 'Roma');
 $marco = new Persona('Marco', 'Bianchi', 26, '3270985564', 'Milano');
 $giovanni = new Persona('Giovanni', 'Verdi', 28, '3257096854', 'Bologna');
-var_dump($andrea, $marco, $giovanni);
-var_dump($marco->getName(), $marco->getAge());
+// var_dump($andrea, $marco, $giovanni);
+$Persona = [$andrea, $marco, $giovanni]
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>
+<?php
+            foreach ($Persona as $value) { ?>
+                    <div class="card">
+                        <h2> <?php echo $value -> getName() ?></h2>
+                        <p> Genere: <?php echo $value -> getAge() ?></p>
+
+                    </div>
+<?php } ?> 
+</p>
+</body>
+</html>
